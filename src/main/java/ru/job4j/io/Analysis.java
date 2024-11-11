@@ -17,8 +17,8 @@ public class Analysis {
                 String key = pair[0];
                 String value = pair[1];
                 if (status == 1
-                        && (Objects.equals(pair[0], "400") || Objects.equals(pair[0], "500"))) {
-                    resultLine[0] = key;
+                        && (Objects.equals(key, "400") || Objects.equals(key, "500"))) {
+                    resultLine[0] = value;
                     status = 0;
                 }
                 if (status == 0
@@ -29,7 +29,7 @@ public class Analysis {
                 }
             }
             if (status == 0) {
-                result.add(resultLine[0] + "; now");
+                result.add(resultLine[0] + ";now");
             }
         } catch (Exception e) {
             e.printStackTrace();
